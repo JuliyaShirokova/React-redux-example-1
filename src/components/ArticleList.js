@@ -4,23 +4,34 @@ import PropTypes from 'prop-types';
 import toogleAccordeon from '../decorators/toogleAccordeon';
 import {articles} from '../fixtures'
 
-const ArticleList = (props) => {
+class ArticleList extends Component{
 
-	const getArticleList = ()=>{
+	constructor(props){
+		super(props)
+
+		this.state={
+			visibleArticles : {articles}
+		}
+
+	}
+
+	getArticleList = ()=>{
 		return articles.map(
 			(article) => <li key={article.id}>
 				<Article 
 					article = {article} 
-					openArticleId = {props.openArticleId}
-					toogleAccordeon = {props.toogleAccordeon}  
+					openArticleId = {this.props.openArticleId}
+					toogleAccordeon = {this.props.toogleAccordeon}  
 				/>
 			</li> 
 		)	
 	} 	
-
-	return (
-			<ul>{getArticleList()}</ul>
-			)
+	render(){
+		return (
+				<ul>{this.getArticleList()}</ul>
+				)	
+	}
+	
 }
 
 ArticleList.propTypes = {

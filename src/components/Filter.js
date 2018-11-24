@@ -1,28 +1,18 @@
 import React, {Component} from 'react';
-import Select from 'react-select';
-import {articles} from '../fixtures';
-
-
-const options = articles.map((article)=>{return {value: article.id, label: article.title}});
+import FilterSelect from './FilterSelect';
+import FilterCalendar from './FilterCalendar';
 
 class Filter extends Component {
-  state = {
-    selectedOption: null,
-  }
-  handleChange = (selectedOption) => {
-    this.setState({ selectedOption });
-    console.log(`Option selected:`, selectedOption);
-  }
+  
   render() {
-    const { selectedOption } = this.state;
+  	return (
+			<div className='block-filter'>
 
-    return (
-      <Select
-        value={selectedOption}
-        onChange={this.handleChange}
-        options={options}
-      />
-    );
+				<FilterSelect />
+				<FilterCalendar />
+
+			</div>
+  		)
   }
 }
 export default Filter
