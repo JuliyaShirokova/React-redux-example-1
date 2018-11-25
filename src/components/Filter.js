@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import FilterSelect from './FilterSelect';
+import FilterSelectContainer from '../containers/FilterSelectContainer';
 import FilterCalendar from './FilterCalendar';
 
 class Filter extends Component {
@@ -8,7 +8,7 @@ class Filter extends Component {
   	return (
 			<div className='block-filter'>
 
-				<FilterSelect />
+				<FilterSelectContainer />
 				<FilterCalendar />
 
 			</div>
