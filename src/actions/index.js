@@ -15,11 +15,11 @@ export const toggleTodo = id => ({
   id
 })
 
-export const setVisibilityFilteArticle = (id) => {
-  console.log('action id', id)
+export const setVisibilityFilteArticle = (obj) => {
+  console.log('action obj', obj)
   return ({
     type: 'SET_VISIBILITY_FILTER_ARTICLE',
-    id
+    obj
   })
 } 
 

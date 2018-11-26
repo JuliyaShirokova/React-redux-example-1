@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { setVisibilityFilteArticle, VisibilityFiltersArticle } from '../actions'
+import { setVisibilityFilteArticle } from '../actions'
 import FilterSelect from '../components/FilterSelect'
 
 const mapStateToProps = (state, ownProps) => ({
@@ -8,8 +8,8 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = dispatch => {
  return {
-    onChangeSelect: (id) => {
-      dispatch(setVisibilityFilteArticle(id))
+    onChangeSelect: (val) => {
+      dispatch(setVisibilityFilteArticle(val))
     }
   }
 }

@@ -16,10 +16,17 @@ class FilterSelect extends Component {
     return (
       <Select
         value={selectedOption}
-        onChange={(val, item) => { this.setState({selectedOption: val}); this.props.onChangeSelect(val.value)}}
+        onChange={(val)=>{this.handleChange(val)}}
         options={options}
+        isMulti
       />
     );
+  }
+
+  handleChange = (val)=>{
+    this.setState({selectedOption: val}); 
+    console.log('Option selected:', val);
+    this.props.onChangeSelect(val)
   }
 }
 
